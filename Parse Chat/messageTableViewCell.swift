@@ -11,18 +11,18 @@ import UIKit
 class messageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var userLabel: UILabel!
+    // @IBOutlet weak var userLabel: UILabel!
     
     var message: String! {
         didSet {
             messageLabel.text = message
         }
     }
-    var user: String! {
+    /*var user: String! {
         didSet {
             userLabel.text = user
         }
-    }
+    }*/
     
     
     override func awakeFromNib() {

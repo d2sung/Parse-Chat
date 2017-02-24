@@ -31,10 +31,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonClicked(_ sender: Any) {
+    
+    @IBAction func buttClicked(_ sender: Any) {
         let Chat = PFObject(className:"Message")
         Chat["text"] = chatTextField.text!
-        Chat["user"] = "Sim and Daniel"
+        // Chat["user"] = "Sim and Daniel"
         Chat.saveInBackground {
             (success: Bool, error: Error?) -> Void in
             if (success) {
@@ -80,22 +81,24 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.message = messages[indexPath.row]["text"] as! String
         
+        /*
         if (messages[indexPath.row]["user"] != nil) {
             let user = messages[indexPath.row]["user"] as! PFUser
         
+            
             user.fetchInBackground(block: { (userObj, error) in
                 if let user = userObj as? PFUser{
                     print(user.username)
                     cell.user = user.username 
                 }
             })
-            
+ 
             
         }
         else {
             cell.user = "none"
         }
-        
+        */
         return cell
     }
 
